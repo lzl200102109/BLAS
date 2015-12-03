@@ -2,3 +2,9 @@
 **/.DS_Store
 /RemoteSystemsTempFiles
 /.metadata
+**/.settings
+**/.cproject
+**/.project
+**/*.out
+**/*.o
+
