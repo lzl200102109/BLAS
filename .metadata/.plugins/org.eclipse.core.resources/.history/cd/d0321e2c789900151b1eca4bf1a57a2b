@@ -1,0 +1,27 @@
+#include<iostream>
+#include<math.h>
+#include <mgl2/mgl.h>
+#include <mgl2/qt.h>
+
+using namespace std;
+
+int sample(mglGraph *gr)
+{
+  mglData y0(50);   y0.Modify("sin(pi*(2*x-1))");
+  gr->SubPlot(2,2,0);
+  gr->Plot(y0);     gr->Box();
+
+  gr->SubPlot(2,2,1);
+  mglData y1(50,2);
+  y1.Modify("sin(pi*2*x-pi)");
+  y1.Modify("cos(pi*2*x-pi)/2",1);
+  gr->Plot(y1);     gr->Box();
+
+
+}
+
+int main() {
+
+  mglQT gr(sample,"MathGL examples");
+  return gr.Run();
+}

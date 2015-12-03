@@ -1,0 +1,11 @@
+10:57:09 **** Build of configuration Build (GNU) for project BLAS_Practice2 ****
+make all 
+gcc -Wall -framework Accelerate  blas1C.c blaio.c -lm  -o blas1C
+gcc -Wall -framework Accelerate  blas2C.c blaio.c   -lm  -o blas2C
+gcc -Wall -framework Accelerate  blas3C.c blaio.c  -lm  -o blas3C
+gcc -Wall -framework Accelerate  blas2bC.c blaio.c -lm   -o blas2bC
+gcc -Wall -framework Accelerate   slvSysC.c blaio.c  -lm   -o slvSysC
+Make Complete
+
+10:57:12 Build Finished (took 3s.63ms)
+

@@ -1,0 +1,135 @@
+
+/**
+ * MATHGL EXAMPLES
+ */
+
+#include <mgl2/mgl.h>
+
+/* simple example */
+//
+//int main()
+//{
+//  mglGraph gr;
+//  gr.FPlot("sin(pi*x)");
+//  gr.WriteFrame("test.png");
+//}
+
+/* Using MathGL window */
+// Qt
+//#include <mgl2/qt.h>
+//int sample(mglGraph *gr)
+//{
+//  gr->Rotate(60,40);
+//  gr->Box();
+//  return 0;
+//}
+//
+//int main(int argc,char **argv)
+//{
+//  mglQT gr(sample,"MathGL examples");
+//  return gr.Run();
+//}
+
+// GLUT - not working
+//#include <mgl2/glut.h>
+//int sample(mglGraph *gr)
+//{
+//  gr->Rotate(60,40);
+//  gr->Box();
+//  return 0;
+//}
+//int main(int argc,char **argv)
+//{
+//  mglGLUT gr(sample,"MathGL examples");
+//  return 0;
+//}
+
+/* Drawing to file */
+//
+//int sample(mglGraph *gr)
+//{
+//  gr->Rotate(60,40);
+//  gr->Box();
+//  return 0;
+//}
+//int main(int ,char **)
+//{
+//
+//  mglGraph gr;
+//  gr.Alpha(true);
+//  gr.Light(true);
+//  sample(&gr);              // The same drawing function.
+//  //png
+//  gr.WritePNG("test.png");  // Don't forget to save the result!
+//  //eps
+//  gr.WriteEPS("test.eps");  // Don't forget to save the result!
+//
+//  return 0;
+//}
+
+/* Animation */
+
+int sample(mglGraph *gr)
+{
+  gr->NewFrame();             // the first frame
+  gr->Rotate(60,40);
+  gr->Box();
+  gr->EndFrame();             // end of the first frame
+  gr->NewFrame();             // the second frame
+  gr->Box();
+  gr->Axis("xy");
+  gr->EndFrame();             // end of the second frame
+  return gr->GetNumFrame();   // returns the frame number
+}
+
+#include <mgl2/wnd.h>
+mglWindow *gr=NULL;
+void *calc(void *)
+{
+  mglPoint pnt;
+  for(int i=0;i<10;i++)   // do calculation
+  {
+    sleep(2);             // which can be very long
+    pnt = mglPoint(2*mgl_rnd()-1,2*mgl_rnd()-1);
+    if(gr)            // be sure that window is ready
+    {
+      gr->Clf();      // make new drawing
+      gr->Line(mglPoint(),pnt,"Ar2");
+      char str[10] = "i=0";  str[2] = '0'+i;
+      gr->Puts(mglPoint(),str);
+      gr->Update();   // update window
+    }
+  }
+  exit(0);
+}
+int main(int argc,char **argv)
+{
+  static pthread_t thr;
+  // first run yours routine in separate thread
+  pthread_create(&thr,0,calc,0);
+  pthread_detach(thr);
+  gr = new mglWindow;
+  gr->Run();  return 0;
+}
+
+
+
+//
+//int main(int ,char **)
+//{
+//  mglGraph gr;
+//  mglData dat(100);
+//  char str[32];
+//  gr.StartGIF("sample.gif");
+//  for(int i=0;i<40;i++)
+//  {
+//    gr.NewFrame();     // start frame
+//    gr.Box();          // some plotting
+//    for(int j=0;j<dat.nx;j++)
+//      dat.a[j]=sin(M_PI*j/dat.nx+M_PI*0.05*i);
+//    gr.Plot(dat,"b");
+//    gr.EndFrame();     // end frame
+//  }
+//  gr.CloseGIF();
+//  return 0;
+//}

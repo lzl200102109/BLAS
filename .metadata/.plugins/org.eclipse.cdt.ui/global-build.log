@@ -1,0 +1,9 @@
+21:06:02 **** Build of configuration Build (GNU) for project MathGL ****
+make all 
+g++ -Wall -g    -lmgl-qt -lmgl-glut -lmgl src/vector_field.cpp -o bin/vector_field.out
+21:06:04 **** Incremental Build of configuration Build (GNU) for project MathGL ****
+make all 
+make: Nothing to be done for `all'.
+21:06:33 **** Incremental Build of configuration Build (GNU) for project MathGL ****
+make all 
+make: Nothing to be done for `all'.

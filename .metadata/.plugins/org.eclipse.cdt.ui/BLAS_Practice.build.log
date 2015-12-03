@@ -1,0 +1,11 @@
+13:34:37 **** Build of configuration Default for project BLAS_Practice ****
+make all 
+gcc -Wall  blas1C.c blaio.c -lm -lblas -o blas1C
+gcc -Wall  blas2C.c blaio.c   -lm -lblas -o blas2C
+gcc -Wall  blas3C.c blaio.c  -lm -lblas -o blas3C
+gcc -Wall  blas2bC.c blaio.c -lm  -lblas -o blas2bC
+gcc -Wall  -I/usr/include/atlas slvSysC.c blaio.c  -lm -llapack -lblas -o slvSysC
+Make Complete
+
+13:34:38 Build Finished (took 557ms)
+

@@ -1,0 +1,6 @@
+11:22:01 **** Incremental Build of configuration Default for project HelloWorld ****
+make all 
+g++ -g -o hello main.o
+
+11:22:01 Build Finished (took 70ms)
+

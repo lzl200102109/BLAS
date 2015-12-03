@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="org.eclipse.linuxtools.cdt.autotools.core.toolChain.1247704705" name="Build (GNU)">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider id="org.eclipse.cdt.autotools.core.LibtoolGCCBuildCommandParser">
+				<language id="org.eclipse.cdt.core.g++">
+					<resource project-relative-path="ex1.cpp">
+						<entry kind="libraryFile" name="libm.a"/>
+						<entry kind="libraryFile" name="libblas.a"/>
+					</resource>
+					<resource project-relative-path="ex2.cpp">
+						<entry kind="libraryFile" name="libm.a"/>
+						<entry kind="libraryFile" name="libblas.a"/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

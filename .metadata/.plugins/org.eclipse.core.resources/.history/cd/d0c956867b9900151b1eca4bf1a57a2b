@@ -1,0 +1,38 @@
+#include<iostream>
+#include<math.h>
+#include <mgl2/mgl.h>
+#include <mgl2/qt.h>
+#include <mgl2/glut.h>
+
+using namespace std;
+
+int sample(mglGraph *gr)
+{
+  mglData a,b;  mgls_prepare2v(&a,&b);
+  gr->SubPlot(3,2,0,""); gr->Title("Vect plot (default)");
+  gr->Box();  gr->Vect(a,b);
+
+  gr->SubPlot(3,2,1,"");  gr->Title("'.' style; '=' style");
+  gr->Box();  gr->Vect(a,b,"=.");
+
+  gr->SubPlot(3,2,2,"");  gr->Title("'f' style");
+  gr->Box();  gr->Vect(a,b,"f");
+
+  gr->SubPlot(3,2,3,"");  gr->Title("'>' style");
+  gr->Box();  gr->Vect(a,b,">");
+
+  gr->SubPlot(3,2,4,"");  gr->Title("'<' style");
+  gr->Box();  gr->Vect(a,b,"<");
+
+  mglData ex,ey,ez; mgls_prepare3v(&ex,&ey,&ez);
+  gr->SubPlot(3,2,5); gr->Title("3d variant");  gr->Rotate(50,60);
+  gr->Box();  gr->Vect(ex,ey,ez);
+  return 0;
+}
+
+
+int main() {
+
+  mglQT gr(sample1,"MathGL examples");
+  return gr.Run();
+}

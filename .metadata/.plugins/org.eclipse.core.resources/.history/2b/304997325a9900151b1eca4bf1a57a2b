@@ -1,0 +1,37 @@
+#include<iostream>
+#include<math.h>
+#include <mgl2/mgl.h>
+
+using namespace std;
+
+int main() {
+
+	// external array
+	double *a = new double[50];
+	for(int i=0;i<50;i++)   a[i] = sin(M_PI*i/49.);
+
+	mglData y1;
+	y1.Set(a,50);
+
+	// direct array
+	mglData y2(50);
+	for(int i=0;i<50;i++)   y2.a[i] = sin(M_PI*i/49.);
+
+	// textual formula
+  mglData y3(50);
+  y3.Modify("sin(pi*x)");
+
+  mglData y4(50);
+  y4.Fill(0,M_PI);
+  y4.Modify("sin(u)");
+
+
+  // load from file
+  FILE *fp=fopen("sin.dat","wt");   // create file first
+  for(int i=0;i<50;i++)   fprintf(fp,"%g\n",sin(M_PI*i/49.));
+  fclose(fp);
+
+  mglData y("sin.dat");             // load it
+
+	return 0;
+}

@@ -1,0 +1,17 @@
+CC       = g++
+CFLAGS   = -Wall
+BLLIB  = -lblas
+LPLIB  = -llapack
+LPINC  = -I/usr/include/
+
+
+all:	basic advanced
+
+basic : basic.cpp
+	$(CC) $(CFLAGS) basic.cpp -lmgl-qt -lmgl-glut -lmgl -o basic
+	
+advanced : advanced.cpp
+	$(CC) $(CFLAGS) advanced.cpp -lmgl-qt -lmgl-glut -lmgl -o advanced
+	
+clean : 
+	rm *.out *.jpg *.eps *.gif *.png

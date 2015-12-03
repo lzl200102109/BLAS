@@ -1,0 +1,53 @@
+
+/**
+ * MATHGL EXAMPLES
+ */
+
+#include <mgl2/mgl.h>
+
+/* Using MathGL window */
+// Qt
+#include <mgl2/qt.h>
+
+int sample1(mglGraph *gr)
+{
+  gr->SubPlot(2,2,0); gr->Box();
+  gr->Puts(mglPoint(-1,1.1),"Just box",":L");
+  gr->InPlot(0.2,0.5,0.7,1,false);  gr->Box();
+  gr->Puts(mglPoint(0,1.2),"InPlot example");
+  gr->SubPlot(2,2,1); gr->Title("Rotate only");
+  gr->Rotate(50,60);  gr->Box();
+  gr->SubPlot(2,2,2); gr->Title("Rotate and Aspect");
+  gr->Rotate(50,60);  gr->Aspect(1,1,2);  gr->Box();
+  gr->SubPlot(2,2,3); gr->Title("Aspect in other direction");
+  gr->Rotate(50,60);  gr->Aspect(1,2,2);  gr->Box();
+  return 0;
+}
+
+int sample2(mglGraph *gr)
+{
+  gr->SubPlot(3,2,0); gr->Title("StickPlot");
+  gr->StickPlot(3, 0, 20, 30);  gr->Box("r"); gr->Puts(mglPoint(0),"0","r");
+  gr->StickPlot(3, 1, 20, 30);  gr->Box("g"); gr->Puts(mglPoint(0),"1","g");
+  gr->StickPlot(3, 2, 20, 30);  gr->Box("b"); gr->Puts(mglPoint(0),"2","b");
+  gr->SubPlot(3,2,3,"");  gr->Title("ColumnPlot");
+  gr->ColumnPlot(3, 0); gr->Box("r"); gr->Puts(mglPoint(0),"0","r");
+  gr->ColumnPlot(3, 1); gr->Box("g"); gr->Puts(mglPoint(0),"1","g");
+  gr->ColumnPlot(3, 2); gr->Box("b"); gr->Puts(mglPoint(0),"2","b");
+  gr->SubPlot(3,2,4,"");  gr->Title("GridPlot");
+  gr->GridPlot(2, 2, 0);  gr->Box("r"); gr->Puts(mglPoint(0),"0","r");
+  gr->GridPlot(2, 2, 1);  gr->Box("g"); gr->Puts(mglPoint(0),"1","g");
+  gr->GridPlot(2, 2, 2);  gr->Box("b"); gr->Puts(mglPoint(0),"2","b");
+  gr->GridPlot(2, 2, 3);  gr->Box("m"); gr->Puts(mglPoint(0),"3","m");
+  gr->SubPlot(3,2,5,"");  gr->Title("InPlot");  gr->Box();
+  gr->InPlot(0.4, 1, 0.6, 1, true); gr->Box("r");
+  gr->MultiPlot(3,2,1, 2, 1,"");  gr->Title("MultiPlot"); gr->Box();
+  return 0;
+}
+
+int main(int argc,char **argv)
+{
+  mglQT gr1(sample1,"MathGL examples");
+  mglQT gr2(sample2,"MathGL examples");
+  return gr1.Run();
+}

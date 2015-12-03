@@ -1,0 +1,17 @@
+CC       = g++
+CFLAGS   = -Wall
+BLLIB  = -lblas
+LPLIB  = -llapack
+LPINC  = -I/usr/include/
+
+
+all:	ex2
+
+ex1 : ex1.cpp
+	$(CC) $(CFLAGS) ex1.cpp -lmgl-qt -lmgl-glut -lmgl
+	
+ex1 : ex1.cpp
+	$(CC) $(CFLAGS) ex1.cpp -lmgl-qt -lmgl-glut -lmgl
+	
+clean : 
+	rm *.out *.jpg *.eps *.gif *.png

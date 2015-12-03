@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="org.eclipse.linuxtools.cdt.autotools.core.toolChain.1379840177" name="Build (GNU)">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider id="org.eclipse.cdt.autotools.core.LibtoolGCCBuildCommandParser">
+				<language id="org.eclipse.cdt.core.gcc">
+					<resource project-relative-path="blaio.c">
+						<entry kind="libraryFile" name="libm.a"/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

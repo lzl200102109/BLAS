@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="org.eclipse.linuxtools.cdt.autotools.core.toolChain.528054797" name="Build (GNU)">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider id="org.eclipse.cdt.autotools.core.LibtoolGCCBuildCommandParser">
+				<language id="org.eclipse.cdt.core.g++">
+					<resource project-relative-path="hs071_nlp.cpp">
+						<entry kind="includePath" name="/${ProjName}/`echo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/usr/local/include/coin/ThirdParty"/>
+						<entry kind="macro" name="IPOPT_BUILD" value=""/>
+						<entry kind="macro" name="NDEBUG" value=""/>
+					</resource>
+					<resource project-relative-path="hs071_main.cpp">
+						<entry kind="includePath" name="/${ProjName}/`echo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/usr/local/include/coin/ThirdParty"/>
+						<entry kind="macro" name="IPOPT_BUILD" value=""/>
+						<entry kind="macro" name="NDEBUG" value=""/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

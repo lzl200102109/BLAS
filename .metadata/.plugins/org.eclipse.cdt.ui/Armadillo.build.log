@@ -1,0 +1,6 @@
+20:51:01 **** Incremental Build of configuration Build (GNU) for project Armadillo ****
+make all 
+g++   -O2   -o example1  example1.cpp  -larmadillo -framework Accelerate
+
+20:51:04 Build Finished (took 2s.653ms)
+

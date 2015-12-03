@@ -1,0 +1,9 @@
+#include <mgl2/mgl.h>
+int main(int ,char **)
+{
+  mglGraph gr;
+  gr.Alpha(true);   gr.Light(true);
+  sample(&gr);              // The same drawing function.
+  gr.WritePNG("test.png");  // Don't forget to save the result!
+  return 0;
+}
