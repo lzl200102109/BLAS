@@ -1,6 +1,0 @@
-18:37:41 **** Build of configuration Build (GNU) for project IPOPT_C ****
-make clean 
-rm -f hs071_c hs071_c.o ipopt.out
-
-18:37:41 Build Finished (took 71ms)
-

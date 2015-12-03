@@ -1,6 +1,0 @@
-13:26:57 **** Build of configuration Build (GNU) for project hs071_cpp ****
-make clean 
-rm -rf hs071_cpp hs071_main.o hs071_nlp.o ipopt.out
-
-13:26:57 Build Finished (took 70ms)
-

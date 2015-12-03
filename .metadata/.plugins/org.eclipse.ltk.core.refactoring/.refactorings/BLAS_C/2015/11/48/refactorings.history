@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;BLAS_Practice/biaio.c&apos; to &apos;blaio.c&apos;" description="Rename resource &apos;biaio.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="biaio.c" name="blaio.c" stamp="1448562004747" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;BLAS_Practice/biaio.h&apos; to &apos;blaio.h&apos;" description="Rename resource &apos;biaio.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="biaio.h" name="blaio.h" stamp="1448562021981" updateReferences="true"/>
-</session>
