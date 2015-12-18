@@ -11,4 +11,4 @@ To complile `dlib`, follow these steps:
   ```
 
 2. In Eclipse, import `dlib_cmake` as makefile project.
-3. create make targets and compile.
+3. Create make targets and compile.
