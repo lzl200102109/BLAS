@@ -8,6 +8,7 @@
 **/*.out
 **/*.o
 **/*.dSYM
-/*cmake
+/*_cmake
 **/build/*
 **/bin/*
+
