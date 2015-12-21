@@ -7,7 +7,7 @@
  * Authors:  Carl Laird, Andreas Waechter     IBM    2005-08-17
  */
 
-#include "IpStdCInterface.h"
+#include "/usr/local/include/coin/IpStdCInterface.h"
 #include <stdlib.h>
 #include <assert.h>
 #include <stdio.h>

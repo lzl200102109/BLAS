@@ -6,7 +6,7 @@
 //
 // Authors:  Carl Laird, Andreas Waechter     IBM    2005-08-10
 
-#include "IpIpoptApplication.hpp"
+#include "/usr/local/include/coin/IpIpoptApplication.hpp"
 #include "hs071_nlp.hpp"
 
 #include <iostream>

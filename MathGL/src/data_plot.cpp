@@ -87,6 +87,6 @@ int sample3(mglGraph *gr)
 
 int main() {
 
-  mglQT gr(sample3,"MathGL examples");
+  mglQT gr(sample1,"MathGL examples");
   return gr.Run();
 }
