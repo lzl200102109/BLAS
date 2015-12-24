@@ -8,7 +8,6 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-
 #include <ilcplex/ilocplex.h>
 ILOSTLBEGIN
 
@@ -19,9 +18,5 @@ extern "C"
 {
   #include <cblas.h>
 }
-
-
-
-
 
 #endif /* MAIN_H_ */

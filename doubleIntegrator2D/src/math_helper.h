@@ -19,6 +19,4 @@ void printMatrix(double Mat[], int n, int m);
 void scalarMatMulti(double Mat[], double scalar, int n, int m);
 void matrixSum(double Mat1[], double Mat2[], double MatSum[], int n, int m);
 
-
-
 #endif /* MATH_HELPER_H_ */
