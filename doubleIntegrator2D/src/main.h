@@ -13,8 +13,6 @@
 ILOSTLBEGIN
 
 #include <cstdlib>
-#include <vector>
-#include <array>
 #include"math_helper.h"
 
 extern "C"

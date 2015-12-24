@@ -7,39 +7,45 @@ static void populatebyrow (IloModel model, IloNumVarArray x, IloRangeArray c);
 int main (int argc, char **argv)
 {
 
-  double dt = 0.1;
-  double c_t = 0.5;
-  double m = 1.5;
+  double  dt  = 0.1,
+          c_t = 0.5,
+          m   = 1.5;
 
-  array<double,16> A_c = {  0, 0, 1, 0,
-                            0, 0, 0, 1,
-                            0, 0, -c_t/m, 0,
-                            0, 0, 0, -c_t/m };
+  double A_c[N*N] = { 0, 0, 1, 0,
+                      0, 0, 0, 1,
+                      0, 0, -c_t/m, 0,
+                      0, 0, 0, -c_t/m },
 
-  array<double,8> B_c = { 0, 0,
-                          0, 0,
-                          1, 0,
-                          0, 1 };
+         B_c[N*M] = { 0, 0,
+                      0, 0,
+                      1, 0,
+                      0, 1 },
 
-  array<double,16> I = {  1, 0, 0, 0,
-                          0, 1, 0, 0,
-                          0, 0, 1, 0,
-                          0, 0, 0, 1 };
+         I[N*N] = { 1, 0, 0, 0,
+                    0, 1, 0, 0,
+                    0, 0, 1, 0,
+                    0, 0, 0, 1 };
 
-  array<double,16> A = A_c;
-  array<double, 8> B = B_c;
+  double A[N*N],
+         B[N*M];
 
-  // compute A
-  scalarMatMulti(A.data(), dt, N, N);
-  matrixSum(I.data(), A.data(), A.data(), N, N);
+  copy(A_c, A_c+N*N, A);
+  copy(B_c, B_c+N*M, B);
 
-  // compute B
-  scalarMatMulti(B.data(), dt, N, M);
+  // compute discretized matrices A and B by Euler approximation
+  // A = A_c*dt + I;
+  // B = B_c*dt;
+  scalarMatMulti(A, dt, N, N);
+  matrixSum(I, A, A, N, N);
+  scalarMatMulti(B, dt, N, M);
+
+//  printMatrix(A, N, N);
+//  cout << endl;
+//  printMatrix(B, N, M);
+//  cout << endl;
 
 
-
-
-
+  // solve the optimization problem
   IloEnv   env;
   try {
      IloModel model(env);
@@ -82,10 +88,6 @@ int main (int argc, char **argv)
 
 
 
-  printMatrix(A.data(), N, N);
-  cout << endl;
-  printMatrix(B.data(), N, M);
-  cout << endl;
 
 
 
